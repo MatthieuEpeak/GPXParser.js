@@ -212,8 +212,8 @@ gpxParser.prototype.queryDirectSelector = function(parent, needle) {
     if(elements.length > 1) {
         let directChilds = parent.childNodes;
 
-        for(idx in directChilds) {
-            elem = directChilds[idx];
+        for(let idx in directChilds) {
+            let elem = directChilds[idx];
             if(elem.tagName === needle) {
                 finalElem = elem;
             }
@@ -362,7 +362,7 @@ gpxParser.prototype.toGeoJSON = function () {
         },
     };
 
-    for(idx in this.tracks) {
+    for(let idx in this.tracks) {
         let track = this.tracks[idx];
 
         var feature = {
@@ -383,7 +383,7 @@ gpxParser.prototype.toGeoJSON = function () {
         feature.properties.link   = track.link;
         feature.properties.type   = track.type;
 
-        for(idx in track.points) {
+        for(let idx in track.points) {
             let pt = track.points[idx];
         
             var geoPt = [];
@@ -397,7 +397,7 @@ gpxParser.prototype.toGeoJSON = function () {
         GeoJSON.features.push(feature);
     }
 
-    for(idx in this.routes) {
+    for(let idx in this.routes) {
         let track = this.routes[idx];
 
         var feature = {
@@ -419,7 +419,7 @@ gpxParser.prototype.toGeoJSON = function () {
         feature.properties.type   = track.type;
 
 
-        for(idx in track.points) {
+        for(let idx in track.points) {
             let pt = track.points[idx];
         
             var geoPt = [];
@@ -433,7 +433,7 @@ gpxParser.prototype.toGeoJSON = function () {
         GeoJSON.features.push(feature);
     }
 
-    for(idx in this.waypoints) {
+    for(let idx in this.waypoints) {
         let pt = this.waypoints[idx];
     
         var feature = {
